@@ -50,7 +50,8 @@
     "deployELB": "[or(equals(parameters('deploymentMode'),'Standard'), equals(parameters('deploymentMode'),'ELBOnly'))]",
     "deployILB": "[or(equals(parameters('deploymentMode'),'Standard'), equals(parameters('deploymentMode'),'ILBOnly'))]",
     "appName": "[concat(parameters('vmName'))]",
-    "appAddressName": "[variables('appName')]",
+    //"appAddressName": "[variables('appName')]",
+    "appAddressName": "[concat(variables('appName'), '-PIP')]",
     "appAddressId": "[resourceId(variables('resourceGroup').name, 'Microsoft.Network/publicIPAddresses/', variables('appAddressName'))]",
     "appFEName": "[concat(parameters('vmName'), '-PIP')]",
     "elbName": "GSI-EM-AZ1-CP-PLB-0001",
@@ -87,8 +88,8 @@
       "condition": "[and(variables('deployELB'), not(parameters('upgrading')))]",
       "apiVersion": "2020-06-01",
       "location": "[parameters('location')]",
-      //"name": "[variables('appAddressName')]",
-      "name": "[variables('appFEName')]",
+      "name": "[variables('appAddressName')]",
+      //"name": "[variables('appFEName')]",
       "sku": {
         "name": "Standard"
       },
@@ -120,8 +121,8 @@
             "name": "[variables('appFEName')]",
             "properties": {
               "publicIPAddress": {
-                //"id": "[resourceId(variables('resourceGroup').name, 'Microsoft.Network/publicIPAddresses/', variables('appAddressName'))]"
-                "id": "[resourceId(variables('resourceGroup').name, 'Microsoft.Network/publicIPAddresses/', variables('appFEName'))]"
+                "id": "[resourceId(variables('resourceGroup').name, 'Microsoft.Network/publicIPAddresses/', variables('appAddressName'))]"
+                //"id": "[resourceId(variables('resourceGroup').name, 'Microsoft.Network/publicIPAddresses/', variables('appFEName'))]"
               }
             }
           }
