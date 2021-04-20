@@ -25,7 +25,7 @@
   "resources": [
     {
       "type": "Microsoft.Storage/storageAccounts",
-      "name": "[parameters('storageAccountName')]",
+      "name": "gsiemaz1cpsa0001",
       "apiVersion": "[parameters('apiVersion')]",
       "location": "[parameters('location')]",
       "sku": {
