@@ -87,7 +87,8 @@
       "condition": "[and(variables('deployELB'), not(parameters('upgrading')))]",
       "apiVersion": "2020-06-01",
       "location": "[parameters('location')]",
-      "name": "[variables('appAddressName')]",
+      //"name": "[variables('appAddressName')]",
+      "name": "[variables('appFEName')]",
       "sku": {
         "name": "Standard"
       },
@@ -119,7 +120,8 @@
             "name": "[variables('appFEName')]",
             "properties": {
               "publicIPAddress": {
-                "id": "[resourceId(variables('resourceGroup').name, 'Microsoft.Network/publicIPAddresses/', variables('appAddressName'))]"
+                //"id": "[resourceId(variables('resourceGroup').name, 'Microsoft.Network/publicIPAddresses/', variables('appAddressName'))]"
+                "id": "[resourceId(variables('resourceGroup').name, 'Microsoft.Network/publicIPAddresses/', variables('appFEName'))]"
               }
             }
           }
