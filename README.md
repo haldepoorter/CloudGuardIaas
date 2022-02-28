@@ -1,5 +1,5 @@
-# Check Point CloudGuard Network Repository Overview
-Check Point CloudGuard Network (formerly known as CloudGuard IaaS) repository.
+# dlw Check Point CloudGuard Network Repository Overview
+Base repository of dlw templates used for Check Point CloudGuard Network.
 
 The repository contains:
 
@@ -11,9 +11,6 @@ The repository contains:
 
 ## Related Products and Solutions
 * CloudGuard for Azure
-* CloudGuard for AWS
-* CloudGuard for GCP
-* CloudGuard for Azure Stack
 
 ## References
 * For more information about Check Point CloudGuard for Public Cloud, see https://www.checkpoint.com/products/iaas-public-cloud-security/
