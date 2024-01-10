@@ -148,6 +148,7 @@
               "protocol": "[variables('appFrontEndProtocol')]",
               "frontendPort": "[variables('appFrontEndPort')]",
               "backendPort": "[variables('appBackEndPort')]",
+              "disableOutboundSnat": true,
               "enableFloatingIP": false,
               "loadDistribution": "[parameters('appLoadDistribution')]"
             }
